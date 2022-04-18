@@ -1,4 +1,5 @@
 import styles from './List.module.scss';
+import Column from '../Column/Column';
 
 const List = () => {
   return (
@@ -8,15 +9,9 @@ const List = () => {
       </header>
       <p className={styles.description}>Interesting things I want to check out</p>
       <section className={styles.columns}>
-        <article>
-          <h2 className={styles.title}>Books</h2>
-        </article>
-        <article>
-          <h2 className={styles.title}>Movies</h2>
-        </article>
-        <article>
-          <h2 className={styles.title}>Games</h2>
-        </article>
+        <Column icon="book" title="Books"/>
+        <Column icon="film" title="Movies"/>
+        <Column icon="gamepad" title="Games"/>
       </section>
     </div>
   );
