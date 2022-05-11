@@ -8,17 +8,17 @@ const SearchForm = () => {
 
   const dispatch = useDispatch();
 
-  const [search, setSearch] = useState('');
+  const [searchString, setSearchString] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch({ type:( 'UPDATE_SEARCHSTRING' ), payload:{ search } });
-    setSearch('');
+    dispatch({ type:( 'UPDATE_SEARCHSTRING' ), payload: searchString });
+    setSearchString('');
   };
 
   return (
     <form className={styles.searchForm} onSubmit={handleSubmit}> 
-      <TextInput placeholder="Search..." value={search} onChange={e => setSearch(e.target.value)} />
+      <TextInput placeholder="Search..." value={searchString} onChange={e => setSearchString(e.target.value)} />
       <Button>
         <span className="fa fa-search" />
       </Button>
