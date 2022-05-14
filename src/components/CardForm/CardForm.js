@@ -6,21 +6,37 @@ import TextInput from './../TextInput/TextInput';
 
 
 const CardForm = ({ columnId }) => {
+
     const [title, setTitle] = useState('');
 
     const dispatch = useDispatch();
 
     const handleSubmit = e => {
       e.preventDefault();
-      dispatch({ type: 'ADD_CARD', payload: { columnId, title } });
+      dispatch({
+        type: 'ADD_CARD',
+        payload: {
+          columnId,
+          title
+        }
+      });
       setTitle('');
     };
 
 	return (
-        <form className={styles.cardForm} onSubmit={handleSubmit}>
-            <TextInput type="text" value={title} onChange={e => setTitle(e.target.value)} />
-            <Button>Add card</Button>
-        </form>
+    <form
+    className={styles.cardForm}
+    onSubmit={handleSubmit}
+    >
+      <TextInput
+        type="text"
+        value={title}
+        onChange={e => {
+          setTitle(e.target.value)
+        }}
+      />
+      <Button>Add card</Button>
+    </form>
 	);
 };
 

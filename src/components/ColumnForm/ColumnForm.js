@@ -10,17 +10,40 @@ const ColumnForm = () => {
 
     const dispatch = useDispatch();
 
-    const handleSubmit = e => {
-      e.preventDefault();
-      dispatch({ type: 'ADD_COLUMN', payload: { title, icon } });
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      dispatch({
+        type: 'ADD_COLUMN',
+        payload: { title, icon }
+      });
       setTitle('');
       setIcon('');
     };
 
 	return (
-    <form className={styles.columnForm} onSubmit={handleSubmit}>
-      <label className={styles.ColumnForm}>Title: </label><TextInput type="text" value={title} onChange={e => setTitle(e.target.value)} />
-      <label className={styles.ColumnForm}>Icon: </label><TextInput type="text" value={icon} onChange={e => setIcon(e.target.value)} />
+    <form
+      className={styles.columnForm}
+      onSubmit={handleSubmit}>
+      <label className={styles.ColumnForm}>
+        Title:
+      </label>
+      <TextInput
+        type="text"
+        value={title}
+        onChange={event => {
+          setTitle(event.target.value)
+        }}
+      />
+      <label className={styles.ColumnForm}>
+        Icon:
+      </label>
+      <TextInput
+        type="text"
+        value={icon}
+        onChange={event => {
+        setIcon(event.target.value)
+        }}
+      />
       <Button>Add column</Button>
     </form>
 	);

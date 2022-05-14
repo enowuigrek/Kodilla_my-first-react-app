@@ -10,15 +10,24 @@ const SearchForm = () => {
 
   const [searchString, setSearchString] = useState('');
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    dispatch({ type:( 'UPDATE_SEARCHSTRING' ), payload: searchString });
-    setSearchString('');
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch ({ type:( 'UPDATE_SEARCHSTRING' ),
+    payload: searchString });
   };
 
   return (
-    <form className={styles.searchForm} onSubmit={handleSubmit}> 
-      <TextInput placeholder="Search..." value={searchString} onChange={e => setSearchString(e.target.value)} />
+    <form className={styles.searchForm}
+      onSubmit={handleSubmit}>
+      <TextInput
+        placeholder="Search..."
+        value={searchString}
+        onChange={event => 
+          setSearchString(
+          event.target.value
+          )
+        }
+      />
       <Button>
         <span className="fa fa-search" />
       </Button>
