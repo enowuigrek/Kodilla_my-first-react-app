@@ -1,6 +1,6 @@
 import styles from './Card.module.scss';
 
-const Card = props => {
+const Card = (props) => {
 
   return (
     <li className={styles.card}>
