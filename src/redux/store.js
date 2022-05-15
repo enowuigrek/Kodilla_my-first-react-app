@@ -12,26 +12,28 @@ export const getFilteredCards = ({ cards, searchString }, columnId) => {
 };
 
 export const getAllColumns = (state) => {
-  return state.columns;
+  return (
+    state.columns
+  );
 };
 
 // action creators
 export const addColumn = (payload) => {
   return (
-    ({ type: 'ADD_COLUMN', payload })
-  )
+    { type: 'ADD_COLUMN', payload }
+  );
 };
 
 export const addCard = (payload) => {
   return (
-    ({ type: 'ADD_CARD', payload })
-  )
+    { type: 'ADD_CARD', payload }
+  );
 };
 
 export const updateSearchString = (payload) => {
   return ( 
-    ({ type: 'UPDATE_SEARCHSTRING', payload })
-  )
+    { type: 'UPDATE_SEARCHSTRING', payload }
+  );
 };
 
 const reducer = (state, action) => {
