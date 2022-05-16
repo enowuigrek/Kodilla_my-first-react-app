@@ -6,7 +6,7 @@ import { strContains } from '../utils/strContains';
 //selectors
 export const getFilteredCards = ({ cards, searchString }, columnId) => {
   return (
-    cards.filter(card => card.columnId === columnId &&
+    cards.filter((card) => card.columnId === columnId &&
     strContains(card.title, searchString))
   );
 };
@@ -14,6 +14,24 @@ export const getFilteredCards = ({ cards, searchString }, columnId) => {
 export const getAllColumns = (state) => {
   return (
     state.columns
+  );
+};
+
+export const getListById = ({ lists }, listId) => {
+  return (
+    lists.find(list => list.id === listId)
+  );
+};
+
+export const getColumnsByList = ({ columns }, listId) => {
+  return (
+    columns.filter((column) => column.listId === listId)
+  );
+};
+
+export const getAllLists = (state) => {
+  return (
+    state.lists
   );
 };
 
@@ -37,7 +55,9 @@ export const updateSearchString = (payload) => {
 };
 
 const reducer = (state, action) => {
+
   switch(action.type) {
+
     case 'ADD_COLUMN':
       return {
         ...state,
@@ -49,6 +69,7 @@ const reducer = (state, action) => {
           }
         ]
       };
+
     case 'ADD_CARD':
       return {
         ...state,
@@ -60,12 +81,14 @@ const reducer = (state, action) => {
           }
         ]
       };
+
     case 'UPDATE_SEARCHSTRING':
       return {
         ...state,
         searchString:
         action.payload
       };
+      
     default:
       return state;
   }
