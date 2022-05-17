@@ -23,24 +23,24 @@ const ColumnForm = ({ listId }) => {
     <form
       className={styles.columnForm}
       onSubmit={handleSubmit}>
-      <label className={styles.ColumnForm}>
+      <label>
         Title:
       </label>
       <TextInput
         type="text"
         value={title}
-        onChange={event => {
+        onChange={(event) => {
           setTitle(event.target.value)
         }}
       />
-      <label className={styles.ColumnForm}>
+      <label>
         Icon:
       </label>
       <TextInput
         type="text"
         value={icon}
-        onChange={event => {
-        setIcon(event.target.value)
+        onChange={(event) => {
+          setIcon(event.target.value)
         }}
       />
       <Button>Add column</Button>

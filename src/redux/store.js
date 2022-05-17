@@ -54,6 +54,12 @@ export const updateSearchString = (payload) => {
   );
 };
 
+export const addList = (payload) => {
+  return (
+    { type: 'ADD_LIST', payload }
+  );
+};
+
 const reducer = (state, action) => {
 
   switch(action.type) {
@@ -75,6 +81,18 @@ const reducer = (state, action) => {
         ...state,
         cards: [
           ...state.cards,
+          {
+            ...action.payload,
+            id: shortid()
+          }
+        ]
+      };
+    
+    case 'ADD_LIST':
+      return {
+        ...state,
+        lists: [
+          ...state.lists,
           {
             ...action.payload,
             id: shortid()
