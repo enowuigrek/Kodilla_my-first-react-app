@@ -31,8 +31,8 @@ const ListForm = () => {
         type="text"
         value={title}
         onChange={(event) => {
-          setTitle(event.target.value)}
-        }
+          setTitle(event.target.value)
+        }}
         />
       <label>
         Description:
@@ -41,8 +41,8 @@ const ListForm = () => {
         type="text"
         value={description}
         onChange={(event) => {
-          setDescription(event.target.value)}
-        }
+          setDescription(event.target.value)
+        }}
         />
         <Button>Add list</Button>
     </form>
