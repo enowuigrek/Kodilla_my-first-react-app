@@ -9,7 +9,7 @@ const Column = (props) => {
 
   const cards = useSelector(
     state => getFilteredCards(state, props.id)
-    );
+  );
 
   return (
     <article className ={styles.column}>
@@ -25,8 +25,10 @@ const Column = (props) => {
             <Card
               key={card.id}
               title={card.title}
+              id={card.id}
+              isFavorite= {card.isFavorite} 
             />
-          )
+          );
         })}
       </ul>
       <CardForm

@@ -11,6 +11,13 @@ export const getFilteredCards = ({ cards, searchString }, columnId) => {
   );
 };
 
+export const getCardsFavorite = (state) => {
+  return (
+    state.cards.filter(card => card.isFavorite === true)
+  );
+};
+
+
 export const getAllColumns = (state) => {
   return (
     state.columns
@@ -60,6 +67,12 @@ export const addList = (payload) => {
   );
 };
 
+export const toggleCartFavorite = (payload) => {
+  return (
+    {type: 'TOGGLE_CARD_FAVORITE', payload }
+  );
+};
+
 const reducer = (state, action) => {
 
   switch(action.type) {
@@ -105,6 +118,15 @@ const reducer = (state, action) => {
         ...state,
         searchString:
         action.payload
+      };
+
+    case 'TOGGLE_CARD_FAVORITE':
+      return {
+        ...state,
+        cards: state.cards.map(
+          card => (card.id === action.payload) ?
+          { ...card, isFavorite: !card.isFavorite } : card
+        )
       };
       
     default:

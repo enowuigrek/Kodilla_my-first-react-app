@@ -17,8 +17,6 @@ const SearchForm = () => {
     dispatch(updateSearchString(searchString));
   };
 
-  console.log(searchString);
-
   return (
     <form className={styles.searchForm}
       onSubmit={handleSubmit}>
