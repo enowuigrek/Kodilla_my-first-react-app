@@ -3,6 +3,7 @@ import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+// import { useMemo } from 'react';
 import { updateSearchString } from '../../redux/store';
 
 const SearchForm = () => {
@@ -16,6 +17,8 @@ const SearchForm = () => {
     dispatch(updateSearchString(searchString));
   };
 
+  console.log(searchString);
+
   return (
     <form className={styles.searchForm}
       onSubmit={handleSubmit}>
@@ -23,9 +26,7 @@ const SearchForm = () => {
         placeholder="Search..."
         value={searchString}
         onChange={event => 
-          setSearchString(
-          event.target.value
-          )
+          setSearchString(event.target.value)
         }
       />
       <Button>
