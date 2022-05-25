@@ -2,7 +2,7 @@ import styles from './Favorite.module.scss';
 import PageTitle from "../PageTitle/PageTitle";
 import Card from "../Card/Card";
 import { useSelector } from "react-redux";
-import { getCardsFavorite } from "../../redux/store";
+import { getCardsFavorite } from "../../redux/cardsRedux";
 
 
 const Favorite = () => {
@@ -14,7 +14,9 @@ const Favorite = () => {
     return ( 
         <div>
             <PageTitle>Favorite</PageTitle>
-            <p className={styles.subtitle}>loren ipsun </p>
+            <p className={styles.subtitle}>
+              Your favorite cards from all lists
+            </p>
         </div>
     );
 

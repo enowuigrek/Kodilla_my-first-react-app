@@ -10,7 +10,7 @@ const TextInput = (props) => {
       placeholder={props.placeholder}
       type="text"
     />
-  )
+  );
 };
 
 export default TextInput;

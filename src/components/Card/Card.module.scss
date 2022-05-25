@@ -7,14 +7,13 @@
 	padding: $base-size;
 	margin: 0 0 $base-size 0;
 	border-radius: $radius;
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 80% 10% 10%;
 	font-weight: bold;
 }
 
 button {
   border: none;
-  color: $color-dark;
   background-color: inherit;
 }
 
